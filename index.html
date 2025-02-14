@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HAPPY Valentines DAY</title>
+  <style>
+    body {
+      font-family: 'Arial Rounded MT Bold', cursive;
+      background-color: #ffe4e1;
+      color: #8b0000;
+      margin: 20px;
+      text-align: center;
+      overflow: hidden; /* Prevent scrollbars caused by fireworks */
+    }
+    h1 {
+      color: #a0522d;
+      font-size: 2em;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 10px;
+      font-size: 1.2em;
+    }.heart {
+      color: red;
+      font-size: 1.5em;
+    }.butterfly {
+      font-size: 1.2em;
+      color: #daa520;
+    }.image-container {
+      margin-top: 20px;
+    }
+    img {
+      max-width: 400px;
+      height: auto;
+      border-radius: 10px;
+      margin: 10px;
+    }.poem {
+      font-style: italic;
+      margin-top: 20px;
+      color: #556b2f;
+    }.section-heading {
+      color: #a0522d;
+      font-size: 1.5em;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Happy Valentines Day <span class="heart">❤</span></h1>
+
+  <p>From awkward high school moments to now, 15 years later... I still can't believe I get to call you mine.</p>
+
+  <ul>
+    <li>It's so annoying how you're always one step ahead of me. It's like you can read my mind! (But secretly, I love it). <span class="butterfly">🦋</span></li>
+    <li>I absolutely hate how creative you are. You make me feel so unoriginal! (Just kidding, I'm constantly in awe of your ideas). <span class="butterfly">🦋</span></li>
+    <li>You're way too energetic. Sometimes I just want to relax, but you always drag me into some fun adventure. (And I wouldn't have it any other way). <span class="heart">❤</span></li>
+    <li>It's frustrating how strong and resilient you are. You make me feel like I can't complain about anything! (But I admire you so much for it). <span class="heart">❤</span></li>
+    <li>You're ridiculously beautiful, inside and out. It's almost unfair! (But seriously, you're radiant). <span class="butterfly">🦋</span></li>
+    <li>You're so captivating it's almost distracting. When we're out, I can't focus on anything else! (But I love that feeling). <span class="heart">❤</span></li>
+  </ul>
+
+  <div class="image-container">
+      <div class="fireworks"></div>
+  </div>
+
+<style>
+    .fireworks {
+      position: fixed; /* Fixed position for background effect */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1; /* Behind other content */
+    }
+
+  .firework {
+    position: absolute;
+    color: deeppink;
+    font-size: 1em; /* Adjust size as needed */
+    animation: explode 2s infinite;
+  }
+
+    /* Use the heart character as content */
+  .fireworks::before,
+  .fireworks::after,
+  .firework:nth-child(1),
+  .firework:nth-child(2),
+  .firework:nth-child(3),
+  .firework:nth-child(4),
+  .firework:nth-child(5),
+  .firework:nth-child(6),
+  .firework:nth-child(7),
+  .firework:nth-child(8),
+  .firework:nth-child(9),
+  .firework:nth-child(10),
+  .firework:nth-child(11),
+  .firework:nth-child(12),
+  .firework:nth-child(13),
+  .firework:nth-child(14),
+  .firework:nth-child(15){
+      content: '❤';
+      position: absolute;
+        top: 50%;
+        left: 50%;
+        color: deeppink;
+        font-size: 1em;
+        animation: explode 2s infinite;
+  }
+
+ @keyframes explode {
+  0% {
+      transform: translate(0, 0) scale(1);
+      opacity: 1;
+  }
+  100% {
+      transform: translate(calc(var(--x) * 100px), calc(var(--y) * 100px)) scale(2); /* Adjust distance and scale */
+      opacity: 0;
+  }
+}
+
+.fireworks::before { --x: -0.5; --y: -0.5; }
+.fireworks::after { --x: 0.8; --y: -0.2; }
+.firework:nth-child(1) { --x: -0.2; --y: 0.9; }
+.firework:nth-child(2) { --x: 0.5; --y: -0.8; }
+.firework:nth-child(3) { --x: 0.3; --y: 0.6; }
+.firework:nth-child(4) { --x: -0.7; --y: 0.4; }
+.firework:nth-child(5) { --x: -0.4; --y: -0.7; }
+.firework:nth-child(6) { --x: 0.9; --y: 0.2; }
+.firework:nth-child(7) { --x: -0.6; --y: -0.6; }
+.firework:nth-child(8) { --x: 0.1; --y: 0.8; }
+.firework:nth-child(9) { --x: -0.8; --y: -0.1; }
+.firework:nth-child(10) { --x: 0.7; --y: 0.5; }
+.firework:nth-child(11) { --x: -0.3; --y: -0.9; }
+.firework:nth-child(12) { --x: 0.6; --y: 0.7; }
+.firework:nth-child(13) { --x: -0.9; --y: 0.3; }
+.firework:nth-child(14) { --x: 0.4; --y: -0.5; }
+.firework:nth-child(15) { --x: -0.5; --y: 0.1; }
+
+  </style>
+
+<div class="poem">
+    <p>In shadows deep, where secrets reside,<br>
+A flame flickered, a love denied.<br>
+Two souls entwined, a destined meet,<br>
+Yet paths diverged, bittersweet.</p>
+
+<p>Fifteen years passed, like distant dreams,<br>
+A chance encounter, it brightly gleams.<br>
+Twin flames rekindled, a burning fire,<br>
+Forged in the past, reaching ever higher.</p>
+
+<p>Though trust was broken, wounds did bleed,<br>
+A second chance, a planted seed.<br>
+For love's true course, it finds its way,<br>
+Through trials faced, to a brighter day.</p>
+</div>
+
+</body>
+</html>
