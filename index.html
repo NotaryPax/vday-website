@@ -1,162 +1,278 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>HAPPY Valentines DAY</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reasons I Love You - 15 Years & Beyond</title>
   <style>
-    body {
-      font-family: 'Arial Rounded MT Bold', cursive;
-      background-color: #ffe4e1;
-      color: #8b0000;
-      margin: 20px;
-      text-align: center;
-      overflow: hidden; /* Prevent scrollbars caused by fireworks */
+    :root {
+      --bg-gradient: linear-gradient(135deg, #1a0507 0%, #2c0b0e 50%, #120203 100%);
+      --card-bg: rgba(44, 11, 14, 0.75);
+      --accent-gold: #f3e5ab;
+      --accent-pink: #ff4d6d;
+      --text-main: #f8f9fa;
+      --text-muted: #d8b4b8;
     }
-    h1 {
-      color: #a0522d;
-      font-size: 2em;
-    }
-    ul {
-      list-style-type: none;
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
       padding: 0;
     }
-    li {
-      margin-bottom: 10px;
-      font-size: 1.2em;
-    }.heart {
-      color: red;
-      font-size: 1.5em;
-    }.butterfly {
-      font-size: 1.2em;
-      color: #daa520;
-    }.image-container {
-      margin-top: 20px;
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg-gradient);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      overflow-x: hidden;
+      position: relative;
     }
-    img {
-      max-width: 400px;
-      height: auto;
-      border-radius: 10px;
-      margin: 10px;
-    }.poem {
+
+    /* Ambient glowing background blur effect */
+    .ambient-glow {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255, 77, 109, 0.15) 0%, rgba(0,0,0,0) 70%);
+      z-index: -1;
+      pointer-events: none;
+      animation: pulseGlow 6s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulseGlow {
+      0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.6; }
+      100% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+    }
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 77, 109, 0.2);
+      border-radius: 24px;
+      padding: 48px 32px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 77, 109, 0.1);
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .heart-icon {
+      font-size: 3rem;
+      color: var(--accent-pink);
+      display: inline-block;
+      animation: heartbeat 1.5s ease-in-out infinite;
+      margin-bottom: 16px;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      15%, 45% { transform: scale(1.2); }
+      30%, 60% { transform: scale(1); }
+    }
+
+    h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 30%, var(--accent-pink) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .reasons-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      text-align: left;
+      margin-bottom: 48px;
+    }
+
+    .reason-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 16px;
+      padding: 20px 24px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .reason-card:hover {
+      transform: translateY(-3px);
+      background: rgba(255, 77, 109, 0.08);
+      border-color: rgba(255, 77, 109, 0.3);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .reason-number {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--accent-pink);
+      background: rgba(255, 77, 109, 0.15);
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .reason-text {
+      font-size: 1.05rem;
+      color: var(--text-main);
+      line-height: 1.5;
+    }
+
+    .emoji-tag {
+      margin-left: 6px;
+      font-size: 1.1rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      color: var(--accent-gold);
+      margin: 36px 0 20px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .image-wrapper {
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(0,0,0,0.2);
+      aspect-ratio: 4/5;
+    }
+
+    .image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .image-wrapper:hover img {
+      transform: scale(1.05);
+    }
+
+    .poem-box {
+      background: rgba(0, 0, 0, 0.3);
+      border-left: 3px solid var(--accent-pink);
+      border-radius: 0 16px 16px 0;
+      padding: 32px;
+      text-align: left;
       font-style: italic;
-      margin-top: 20px;
-      color: #556b2f;
-    }.section-heading {
-      color: #a0522d;
-      font-size: 1.5em;
-      margin-top: 20px;
+      color: var(--text-muted);
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+
+    .poem-box p {
+      margin-bottom: 16px;
+    }
+
+    .poem-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
     }
   </style>
 </head>
 <body>
 
-  <h1>Happy Valentines Day <span class="heart">❤</span></h1>
+  <div class="ambient-glow"></div>
 
-  <p>From awkward high school moments to now, 15 years later... I still can't believe I get to call you mine.</p>
+  <div class="container">
+    <div class="heart-icon">❤</div>
+    <h1>Reasons I Love You</h1>
+    <p class="subtitle">From awkward high school dances to now, 15 years later... I still can't believe I get to call you mine.</p>
 
-  <ul>
-    <li>It's so annoying how you're always one step ahead of me. It's like you can read my mind! (But secretly, I love it). <span class="butterfly">🦋</span></li>
-    <li>I absolutely hate how creative you are. You make me feel so unoriginal! (Just kidding, I'm constantly in awe of your ideas). <span class="butterfly">🦋</span></li>
-    <li>You're way too energetic. Sometimes I just want to relax, but you always drag me into some fun adventure. (And I wouldn't have it any other way). <span class="heart">❤</span></li>
-    <li>It's frustrating how strong and resilient you are. You make me feel like I can't complain about anything! (But I admire you so much for it). <span class="heart">❤</span></li>
-    <li>You're ridiculously beautiful, inside and out. It's almost unfair! (But seriously, you're radiant). <span class="butterfly">🦋</span></li>
-    <li>You're so captivating it's almost distracting. When we're out, I can't focus on anything else! (But I love that feeling). <span class="heart">❤</span></li>
-  </ul>
+    <ul class="reasons-list">
+      <li class="reason-card">
+        <span class="reason-number">1</span>
+        <div class="reason-text">It's so annoying how you're always one step ahead of me. It's like you can read my mind! (But secretly, I love it). <span class="emoji-tag">🦋</span></div>
+      </li>
+      <li class="reason-card">
+        <span class="reason-number">2</span>
+        <div class="reason-text">I absolutely hate how creative you are. You make me feel so unoriginal! (Just kidding, I'm constantly in awe of your ideas). <span class="emoji-tag">🦋</span></div>
+      </li>
+      <li class="reason-card">
+        <span class="reason-number">3</span>
+        <div class="reason-text">You're way too energetic. Sometimes I just want to relax, but you always drag me into some fun adventure. (And I wouldn't have it any other way). <span class="emoji-tag">❤</span></div>
+      </li>
+      <li class="reason-card">
+        <span class="reason-number">4</span>
+        <div class="reason-text">It's frustrating how strong and resilient you are. You make me feel like I can't complain about anything! (But I admire you so much for it). <span class="emoji-tag">❤</span></div>
+      </li>
+      <li class="reason-card">
+        <span class="reason-number">5</span>
+        <div class="reason-text">You're ridiculously beautiful, inside and out. It's almost unfair! (But seriously, you're radiant). <span class="emoji-tag">🦋</span></div>
+      </li>
+      <li class="reason-card">
+        <span class="reason-number">6</span>
+        <div class="reason-text">You're so captivating it's almost distracting. When we're out, I can't focus on anything else! (But I love that feeling). <span class="emoji-tag">❤</span></div>
+      </li>
+    </ul>
 
-  <div class="image-container">
-      <div class="fireworks"></div>
+    <h2 class="section-title">Memories & Moments</h2>
+    <div class="image-grid">
+      <div class="image-wrapper">
+        <img src="https://i.pinimg.com/560x/8f/3e/69/8f3e6965022206716955a02521c81525.jpg" alt="Memory 1">
+      </div>
+      <div class="image-wrapper">
+        <img src="https://i.pinimg.com/560x/01/2b/e4/012be425550a11684c98950550424560.jpg" alt="Memory 2">
+      </div>
+    </div>
+
+    <div class="poem-box">
+      <p>In shadows deep, where secrets reside,<br>A flame flickered, a love denied.<br>Two souls entwined, a destined meet,<br>Yet paths diverged, bittersweet.</p>
+      <p>Fifteen years passed, like distant dreams,<br>A chance encounter, it brightly gleams.<br>Twin flames rekindled, a burning fire,<br>Forged in the past, reaching ever higher.</p>
+      <p>Though trust was broken, wounds did bleed,<br>A second chance, a planted seed.<br>For love's true course, it finds its way,<br>Through trials faced, to a brighter day.</p>
+    </div>
   </div>
 
-<style>
-    .fireworks {
-      position: fixed; /* Fixed position for background effect */
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1; /* Behind other content */
-    }
-
-  .firework {
-    position: absolute;
-    color: deeppink;
-    font-size: 1em; /* Adjust size as needed */
-    animation: explode 2s infinite;
-  }
-
-    /* Use the heart character as content */
-  .fireworks::before,
-  .fireworks::after,
-  .firework:nth-child(1),
-  .firework:nth-child(2),
-  .firework:nth-child(3),
-  .firework:nth-child(4),
-  .firework:nth-child(5),
-  .firework:nth-child(6),
-  .firework:nth-child(7),
-  .firework:nth-child(8),
-  .firework:nth-child(9),
-  .firework:nth-child(10),
-  .firework:nth-child(11),
-  .firework:nth-child(12),
-  .firework:nth-child(13),
-  .firework:nth-child(14),
-  .firework:nth-child(15){
-      content: '❤';
-      position: absolute;
-        top: 50%;
-        left: 50%;
-        color: deeppink;
-        font-size: 1em;
-        animation: explode 2s infinite;
-  }
-
- @keyframes explode {
-  0% {
-      transform: translate(0, 0) scale(1);
-      opacity: 1;
-  }
-  100% {
-      transform: translate(calc(var(--x) * 100px), calc(var(--y) * 100px)) scale(2); /* Adjust distance and scale */
-      opacity: 0;
-  }
-}
-
-.fireworks::before { --x: -0.5; --y: -0.5; }
-.fireworks::after { --x: 0.8; --y: -0.2; }
-.firework:nth-child(1) { --x: -0.2; --y: 0.9; }
-.firework:nth-child(2) { --x: 0.5; --y: -0.8; }
-.firework:nth-child(3) { --x: 0.3; --y: 0.6; }
-.firework:nth-child(4) { --x: -0.7; --y: 0.4; }
-.firework:nth-child(5) { --x: -0.4; --y: -0.7; }
-.firework:nth-child(6) { --x: 0.9; --y: 0.2; }
-.firework:nth-child(7) { --x: -0.6; --y: -0.6; }
-.firework:nth-child(8) { --x: 0.1; --y: 0.8; }
-.firework:nth-child(9) { --x: -0.8; --y: -0.1; }
-.firework:nth-child(10) { --x: 0.7; --y: 0.5; }
-.firework:nth-child(11) { --x: -0.3; --y: -0.9; }
-.firework:nth-child(12) { --x: 0.6; --y: 0.7; }
-.firework:nth-child(13) { --x: -0.9; --y: 0.3; }
-.firework:nth-child(14) { --x: 0.4; --y: -0.5; }
-.firework:nth-child(15) { --x: -0.5; --y: 0.1; }
-
-  </style>
-
-<div class="poem">
-    <p>In shadows deep, where secrets reside,<br>
-A flame flickered, a love denied.<br>
-Two souls entwined, a destined meet,<br>
-Yet paths diverged, bittersweet.</p>
-
-<p>Fifteen years passed, like distant dreams,<br>
-A chance encounter, it brightly gleams.<br>
-Twin flames rekindled, a burning fire,<br>
-Forged in the past, reaching ever higher.</p>
-
-<p>Though trust was broken, wounds did bleed,<br>
-A second chance, a planted seed.<br>
-For love's true course, it finds its way,<br>
-Through trials faced, to a brighter day.</p>
-</div>
+  <footer>
+    <p>Forever & Always • 15 Year Milestone</p>
+  </footer>
 
 </body>
 </html>
